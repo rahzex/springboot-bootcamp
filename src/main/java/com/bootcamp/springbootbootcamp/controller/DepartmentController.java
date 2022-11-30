@@ -15,38 +15,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/v1")
+@RequestMapping(value = "/api/v1/departments")
 public class DepartmentController {
 
     @Autowired
     private DepartmentService departmentService;
 
-    @GetMapping("/departments/{id}")
+    @GetMapping("/{id}")
     public Department getDepartment(@PathVariable("id") Long id) {
         return departmentService.fetch(id);
     }
 
-    @GetMapping("/departments/name/{name}")
+    @GetMapping("/name/{name}")
     public Department getDepartmentByName(@PathVariable("name") String departmentName) {
         return departmentService.fetchDepartmentByName(departmentName);
     }
 
-    @GetMapping("/departments")
+    @GetMapping
     public List<Department> getDepartments() {
         return departmentService.fetchAllDepartments();
     }
 
-    @PostMapping("/department")
+    @PostMapping
     public Department saveDepartment(@RequestBody Department department) {
         return departmentService.save(department);
     }
 
-    @PutMapping("/departments/{id}")
+    @PutMapping("/{id}")
     public Department updateDepartment(@PathVariable("id") Long id, @RequestBody Department department) {
         return departmentService.update(id, department);
     }
 
-    @DeleteMapping("/departments/{id}")
+    @DeleteMapping("/{id}")
     public String deleteDepartment(@PathVariable("id") Long id) {
         departmentService.delete(id);
         return "Deleted " +id;

@@ -14,10 +14,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class DepartmentExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(DepartmentNotFoundException.class)
-    public ErrorResponse departmentNotFoundExceptionHandler(DepartmentNotFoundException e) {
-        return ErrorResponse.builder()
-                .code(HttpStatus.NOT_FOUND)
+    public ResponseEntity<ErrorResponse> departmentNotFoundExceptionHandler(DepartmentNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ErrorResponse.builder()
+                .code(HttpStatus.NOT_FOUND.value())
                 .message(e.getMessage())
-                .build();
+                .build());
     }
 }
