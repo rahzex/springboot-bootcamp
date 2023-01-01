@@ -1,12 +1,10 @@
 package com.bootcamp.springbootbootcamp.exceptionhandler;
 
-import com.bootcamp.springbootbootcamp.entity.ErrorResponse;
+import com.bootcamp.springbootbootcamp.dto.ErrorResponse;
 import com.bootcamp.springbootbootcamp.exception.DepartmentNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 

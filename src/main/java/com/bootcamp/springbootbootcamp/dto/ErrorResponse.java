@@ -1,4 +1,4 @@
-package com.bootcamp.springbootbootcamp.entity;
+package com.bootcamp.springbootbootcamp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
