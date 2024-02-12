@@ -16,6 +16,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * Resources followed
+ * Link 1: https://www.bezkoder.com/websecurityconfigureradapter-deprecated-spring-boot/
+ * Link 2: https://www.javaguides.net/2022/08/spring-security-without-webSecurityconfigureradapter.html?m=1
+ * Link 3: https://stackoverflow.com/questions/72381114/spring-security-upgrading-the-deprecated-websecurityconfigureradapter-in-spring
+ */
 @Component
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
