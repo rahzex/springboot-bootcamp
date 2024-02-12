@@ -14,9 +14,10 @@ public class DepartmentExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(DepartmentNotFoundException.class)
     public ResponseEntity<ErrorResponse> departmentNotFoundExceptionHandler(DepartmentNotFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ErrorResponse.builder()
-                .code(HttpStatus.NOT_FOUND.value())
-                .message(e.getMessage())
+                .body(ErrorResponse
+                        .builder()
+                        .code(HttpStatus.NOT_FOUND.value())
+                        .message(e.getMessage())
                 .build());
     }
 }
